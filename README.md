@@ -2,7 +2,10 @@
 
 > 把对 LLM（重点：DeepSeek V4 系列）在工程维护任务上的探索结果，按人、按主题收录。
 > 每个贡献者通过 PR 上传自己的文件夹，文件夹自带 README 记录研究结果与实验环境。
-> 主仓库:https://github.com/xiaobright/dsh-anchored-standard,该仓库为主仓库的issue和pr进行分流,用以接受关于思维链优化的新发现或新插件。
+>
+> [主仓库](https://github.com/xiaobright/dsh-anchored-standard)
+>
+> 该仓库为xiaobright仓库的issue和pr进行分流,用以接受关于思维链优化的新发现或尝试性新插件。
 
 ## 收录规则（摘要，详见 [CONTRIBUTING.md](./CONTRIBUTING.md)）
 

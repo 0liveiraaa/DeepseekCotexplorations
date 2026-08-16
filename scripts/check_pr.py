@@ -87,6 +87,15 @@ def numstat_dels(base, head, path):
     return 0
 
 
+def exists_in_ref(ref, path):
+    """该路径（文件或目录）在指定 ref 中是否存在。"""
+    out = subprocess.run(
+        ["git", "-C", ROOT, "ls-tree", ref, "--", path],
+        capture_output=True, text=True,
+    )
+    return bool(out.stdout.strip())
+
+
 def scan_sensitive(path):
     """扫描文本文件的敏感内容，返回 [(行号, 类别, 摘要)]。"""
     hits = []
@@ -123,12 +132,13 @@ def main():
     else:
         check("变更列表", True, f"{len(files)} 个文件变更")
 
-    # ---- 提取新增贡献文件夹 ----
+    # ---- 提取新增贡献文件夹（仅限 base 中不存在、本次真正新建的） ----
     new_folders = set()
     for status, path in files:
         if status == "A" and path.startswith("contributions/") and "/" in path[len("contributions/"):]:
             folder = path.split("/")[1]
-            new_folders.add(folder)
+            if not exists_in_ref(args.base, f"contributions/{folder}"):
+                new_folders.add(folder)
 
     # ---- R1 命名合规 ----
     bad_names = [n for n in new_folders if not FOLDER_RE.match(n)]
@@ -154,6 +164,11 @@ def main():
             if not (path.startswith("contributions/") and "/" in path[len("contributions/"):]):
                 check(f"R4 新增文件白名单: {path}", False,
                       "新增文件必须位于 contributions/<文件夹>/ 内")
+                continue
+            folder = path.split("/")[1]
+            if exists_in_ref(args.base, f"contributions/{folder}"):
+                check(f"R4 新增文件白名单: {path}", False,
+                      f"新增文件只能进入本次 PR 新建的文件夹: {folder} 已存在（可能属于他人）")
             continue
         if status == "D":
             check(f"R4 禁止删除: {path}", False, "不允许删除已有文件")

@@ -42,6 +42,7 @@ DeepseekCotexplorations/
 | Greenhand-monster | Wire Think-Execute Standard（wire 级 think 步：工具定义在场 + 调用禁止） | [`greenhand-monster-wire-think-standard`](./contributions/greenhand-monster-wire-think-standard/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 wire-think-standard · 99/A（F9 回填） |
 | Greenhand-monster | Eternal Minimal（永驻 Minimal 目录 + dshx 网关） | [`greenhand-monster-eternal-minimal`](./contributions/greenhand-monster-eternal-minimal/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 eternal-minimal · 98/B+（F9 回填） |
 | Greenhand-monster | Combo Anchored（think 分相 + 深度门 + CoT 滴灌组合） | [`greenhand-monster-combo-anchored`](./contributions/greenhand-monster-combo-anchored/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 combo-anchored · 97/B+（F9 回填） |
+| xiaobright | V4 工具面剂量 + Prefab Anchored Project2 三轮复现与通用化边界 | [`xiaobright-v4-tool-surface-dose-response`](./contributions/xiaobright-v4-tool-surface-dose-response/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro/flash · 72 probes + Project2 98/99/99 |
 
 > 新 PR 合并时，作者需同步在根 `README.md` 索引表加一行。
 

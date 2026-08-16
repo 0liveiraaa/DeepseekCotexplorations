@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "study": "first-request-shell-by-file-schema-factorial",
+  "date": "2026-08-16",
+  "model": "deepseek-v4-pro",
+  "provider": "deepseek-official",
+  "harnessCommit": "47f943859bef60e4160492346772ded9b24f765a",
+  "platform": "darwin-arm64",
+  "fixedSurface": {
+    "systemSha256Prefix": "5fab6e32",
+    "contexts": 0,
+    "toolCount": 2,
+    "reasoningEffort": "max",
+    "maxTokens": 256000
+  },
+  "design": {
+    "tasks": 2,
+    "cellsPerTask": 4,
+    "samplesPerCell": 5,
+    "includedTrajectories": 40,
+    "freshSessionPerTrajectory": true,
+    "randomizedWithinTask": true,
+    "toolExecution": "cancelled-before-dispatch"
+  },
+  "outcome": {
+    "primaryDiagnostic": "minimal-like lexical trajectory label",
+    "abilityEndpoint": false,
+    "validFirstAction": "40/40"
+  },
+  "cells": [
+    {"task":"repo-inspection","shell":"persistent","file":"editor","minimalLike":5,"n":5,"meanPromptTokens":1195},
+    {"task":"repo-inspection","shell":"persistent","file":"read","minimalLike":5,"n":5,"meanPromptTokens":704},
+    {"task":"repo-inspection","shell":"one-shot","file":"editor","minimalLike":2,"n":5,"meanPromptTokens":1727},
+    {"task":"repo-inspection","shell":"one-shot","file":"read","minimalLike":3,"n":5,"meanPromptTokens":1236},
+    {"task":"project2","shell":"persistent","file":"editor","minimalLike":5,"n":5,"meanPromptTokens":1683},
+    {"task":"project2","shell":"persistent","file":"read","minimalLike":2,"n":5,"meanPromptTokens":1192},
+    {"task":"project2","shell":"one-shot","file":"editor","minimalLike":1,"n":5,"meanPromptTokens":2215},
+    {"task":"project2","shell":"one-shot","file":"read","minimalLike":0,"n":5,"meanPromptTokens":1724}
+  ],
+  "marginalEffects": {
+    "persistentVsOneShotShell": {
+      "left": "17/20",
+      "right": "6/20",
+      "riskDifference": 0.55,
+      "fisherTwoSidedNominal": 0.0010645539010388843,
+      "blockedExactRandomizationTwoSidedApprox": 0.000196
+    },
+    "editorVsRead": {
+      "left": "13/20",
+      "right": "10/20",
+      "riskDifference": 0.15,
+      "fisherTwoSidedNominal": 0.5231070892917388,
+      "blockedExactRandomizationTwoSidedApprox": 0.413
+    }
+  },
+  "limitations": [
+    "The shell factor changes a complete schema bundle, not only persistence semantics.",
+    "Forty trajectories come from two prompt templates and are not forty independent tasks.",
+    "Model alias exposes no immutable server build identifier.",
+    "The lexical label is diagnostic and is not a task-success score."
+  ]
+}

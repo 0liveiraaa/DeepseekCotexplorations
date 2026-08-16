@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "study": "request2-reasoning-content-by-session-header-protocol-pilot",
+  "date": "2026-08-16",
+  "model": "deepseek-v4-pro",
+  "provider": "deepseek-official",
+  "harnessCommit": "47f943859bef60e4160492346772ded9b24f765a",
+  "platform": "darwin-arm64",
+  "design": {
+    "independentRequest1SourcePerTreatment": true,
+    "samplesPerCell": 1,
+    "mainSamplesRun": 0,
+    "reasoningFactor": ["retain", "drop"],
+    "sessionFactor": ["same", "new"]
+  },
+  "cells": [
+    {"id":"drop-new","reasoning":"drop","session":"new","httpStatus":200,"finishKind":"stop","answerCorrect":true,"request1ReasoningTokens":55,"request2ReasoningTokens":51,"request1StartsWeNeed":true,"request2StartsWeNeed":false,"request2StartsLetMe":false},
+    {"id":"retain-same","reasoning":"retain","session":"same","httpStatus":200,"finishKind":"stop","answerCorrect":true,"request1ReasoningTokens":61,"request2ReasoningTokens":34,"request1StartsWeNeed":true,"request2StartsWeNeed":false,"request2StartsLetMe":false},
+    {"id":"retain-new","reasoning":"retain","session":"new","httpStatus":200,"finishKind":"stop","answerCorrect":true,"request1ReasoningTokens":62,"request2ReasoningTokens":0,"request1StartsWeNeed":true,"request2StartsWeNeed":false,"request2StartsLetMe":false},
+    {"id":"drop-same","reasoning":"drop","session":"same","httpStatus":200,"finishKind":"stop","answerCorrect":true,"request1ReasoningTokens":8,"request2ReasoningTokens":32,"request1StartsWeNeed":true,"request2StartsWeNeed":false,"request2StartsLetMe":false}
+  ],
+  "interpretation": "Drop was protocol-acceptable for this fixture. Ceiling performance at n=1/cell cannot establish null effects on complex tasks.",
+  "excludedFromPublicProjection": [
+    "reasoning text",
+    "request bodies and hashes",
+    "header values and hashes",
+    "user/session identifiers and hashes",
+    "tool-call identifiers"
+  ]
+}

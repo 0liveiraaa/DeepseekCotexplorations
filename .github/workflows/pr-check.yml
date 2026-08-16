@@ -1,0 +1,26 @@
+name: PR Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  compliance:
+    name: PR 合规检查
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库（含历史）
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 运行 PR 合规检查
+        run: python scripts/check_pr.py --base "origin/${{ github.event.pull_request.base.ref }}"

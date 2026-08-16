@@ -1,0 +1,58 @@
+# ---- 凭据与密钥（CONTRIBUTING 禁止提交） ----
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_ed25519
+*.pub.bak
+
+# ---- 本地配置 / 工具链 ----
+.dsh/
+*.local
+.workbuddy/
+
+# ---- 原始日志与敏感导出 ----
+*.log
+raw/
+**/trajectory_evidence/raw/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- 大型二进制 / 模型权重（放 Releases 或外链） ----
+*.bin
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.so
+*.dll
+*.exe
+*.o
+*.obj
+build/
+dist/
+
+# ---- 系统与编辑器 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~

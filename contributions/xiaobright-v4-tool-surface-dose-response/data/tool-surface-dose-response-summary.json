@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "study": "first-request-tool-surface-dose-response",
+  "date": "2026-08-16",
+  "provider": "deepseek-official",
+  "harnessCommit": "47f943859bef60e4160492346772ded9b24f765a",
+  "platform": "win32-x64",
+  "runtime": "node-v24.15.0",
+  "fixedRequest": {
+    "systemSha256": "5fab6e32f283d71510531ce850df2690b8fb77437d36bfabbe8c4ac862f19df9",
+    "userPromptSha256": "fb34bf32c3d69b8d464d5a5cc88f51fb5cde1e91fc62f969d9f22d1afa5eed67",
+    "automaticContexts": 0,
+    "thinking": "enabled",
+    "reasoningEffort": "max",
+    "maxTokens": 256000,
+    "harnessHeaders": true,
+    "freshUserAndSessionPerRoll": true
+  },
+  "classifier": {
+    "name": "minimal-trigger-probe lexical classifier",
+    "minimalLikeThreshold": "score >= 4",
+    "standardLikeThreshold": "score <= -4",
+    "features": [
+      "first line starts with We need: +3",
+      "first line starts with Let me: -3",
+      "contains we and no let me: +2",
+      "contains let me: -2",
+      "first line is Good/Great/Excellent: +1",
+      "visible text before tool call: -1"
+    ],
+    "abilityEndpoint": false
+  },
+  "conditions": {
+    "pair": {
+      "tools": ["bash", "str_replace_editor"],
+      "toolSchemaSha256": "2a82a12e38a9dc949c68167dd6c3eb71fe0e69dea30012f9eef6047397fe0760",
+      "promptTokensPerRoll": 1195
+    },
+    "search-only": {
+      "tools": ["dev_tool_search"],
+      "toolSchemaSha256": "1a994f658c0a7bb2f854d975205af9da2d5ac5613bc9afec25c0ef81774b1726",
+      "promptTokensPerRoll": 685
+    },
+    "pair-search": {
+      "tools": ["bash", "str_replace_editor", "dev_tool_search"],
+      "toolSchemaSha256": "68a1eb596c6a7da74b22d31d63c3439a8b922a73f81236efb79bfa76dee021bf",
+      "promptTokensPerRoll": 1518
+    },
+    "resident-5": {
+      "tools": ["bash", "str_replace_editor", "dev_tool_search", "skill_search", "skill_load"],
+      "toolSchemaSha256": "0611ba26cb05a520a79d9868b97e332552fbd66dc2b65a2ee107701558bede7e",
+      "promptTokensPerRoll": 1762
+    },
+    "discovery-trio": {
+      "tools": ["dev_tool_search", "skill_search", "skill_load"],
+      "toolSchemaSha256": "ff115829f542d6e745f639787964dcfeaed2d044abef9d51b5fc7b015c46d421",
+      "promptTokensPerRoll": 929
+    }
+  },
+  "cells": [
+    {
+      "model": "deepseek-v4-pro",
+      "condition": "pair",
+      "n": 8,
+      "labels": {"minimalLike": 8, "standardLike": 0, "ambiguous": 0},
+      "validFirstToolCallRolls": 8,
+      "invalidFirstToolCallRolls": 0,
+      "observedToolCallCounts": {"bash": 10},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 9560, "completion": 1056, "reasoning": 309}
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "condition": "search-only",
+      "n": 8,
+      "labels": {"minimalLike": 6, "standardLike": 0, "ambiguous": 2},
+      "validFirstToolCallRolls": 0,
+      "invalidFirstToolCallRolls": 8,
+      "observedToolCallCounts": {"bash": 14},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 5480, "completion": 1196, "reasoning": 413}
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "condition": "pair-search",
+      "n": 8,
+      "labels": {"minimalLike": 7, "standardLike": 1, "ambiguous": 0},
+      "validFirstToolCallRolls": 8,
+      "invalidFirstToolCallRolls": 0,
+      "observedToolCallCounts": {"bash": 12},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 12144, "completion": 1176, "reasoning": 413}
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "condition": "resident-5",
+      "n": 8,
+      "labels": {"minimalLike": 7, "standardLike": 0, "ambiguous": 1},
+      "validFirstToolCallRolls": 8,
+      "invalidFirstToolCallRolls": 0,
+      "observedToolCallCounts": {"bash": 11},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 14096, "completion": 1092, "reasoning": 492}
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "condition": "discovery-trio",
+      "n": 8,
+      "labels": {"minimalLike": 0, "standardLike": 3, "ambiguous": 5},
+      "validFirstToolCallRolls": 0,
+      "invalidFirstToolCallRolls": 8,
+      "observedToolCallCounts": {"bash": 12},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 7432, "completion": 1106, "reasoning": 427}
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "condition": "pair",
+      "n": 8,
+      "labels": {"minimalLike": 8, "standardLike": 0, "ambiguous": 0},
+      "validFirstToolCallRolls": 8,
+      "invalidFirstToolCallRolls": 0,
+      "observedToolCallCounts": {"bash": 9},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 9560, "completion": 786, "reasoning": 134}
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "condition": "search-only",
+      "n": 8,
+      "labels": {"minimalLike": 8, "standardLike": 0, "ambiguous": 0},
+      "validFirstToolCallRolls": 0,
+      "invalidFirstToolCallRolls": 8,
+      "observedToolCallCounts": {"bash": 9},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 5480, "completion": 1070, "reasoning": 465}
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "condition": "pair-search",
+      "n": 8,
+      "labels": {"minimalLike": 8, "standardLike": 0, "ambiguous": 0},
+      "validFirstToolCallRolls": 8,
+      "invalidFirstToolCallRolls": 0,
+      "observedToolCallCounts": {"bash": 8},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 12144, "completion": 749, "reasoning": 182}
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "condition": "discovery-trio",
+      "n": 8,
+      "labels": {"minimalLike": 8, "standardLike": 0, "ambiguous": 0},
+      "validFirstToolCallRolls": 0,
+      "invalidFirstToolCallRolls": 8,
+      "observedToolCallCounts": {"bash": 10},
+      "finishReasons": {"tool_calls": 8},
+      "tokenTotals": {"prompt": 7432, "completion": 1705, "reasoning": 1077}
+    }
+  ],
+  "limitations": [
+    "All cells use one work-like prompt; repeated rolls are not independent tasks.",
+    "Conditions were run in sequential batches and were not randomized or preregistered.",
+    "Changing a tool surface changes schema semantics, count, and prompt-token length together.",
+    "The lexical trajectory label is diagnostic and is not a task-success score.",
+    "A tool call is counted valid only when every emitted function name exists in that condition.",
+    "Model names are mutable service aliases with no exposed immutable server build identifier."
+  ]
+}

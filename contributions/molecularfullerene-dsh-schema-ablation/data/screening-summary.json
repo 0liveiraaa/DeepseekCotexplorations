@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "study": "exploratory-exact-minimal-vs-bash-read-screening",
+  "date": "2026-08-16",
+  "model": "deepseek-v4-pro",
+  "provider": "deepseek-official",
+  "platform": "darwin-arm64",
+  "groups": [
+    {"task":"repo-inspection","surface":"exact-minimal","minimalLike":10,"n":10},
+    {"task":"repo-inspection","surface":"bash-read-surrogate","minimalLike":6,"n":10},
+    {"task":"project2","surface":"exact-minimal","minimalLike":6,"n":10},
+    {"task":"project2","surface":"bash-read-surrogate","minimalLike":2,"n":10}
+  ],
+  "overall": {
+    "exactMinimal": "16/20",
+    "bashReadSurrogate": "8/20",
+    "riskDifference": 0.4,
+    "fisherTwoSidedExploratory": 0.0225,
+    "validFirstAction": "40/40"
+  },
+  "limitations": [
+    "Sample extension from n=3 to n=10 per cell was decided after viewing the initial results.",
+    "The macOS bash/read surface is not the Windows pwsh/read configuration used in the historical 98/99 runs.",
+    "The outcome is a lexical trajectory label, not an ability endpoint."
+  ]
+}

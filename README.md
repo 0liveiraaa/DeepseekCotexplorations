@@ -35,6 +35,7 @@ DeepseekCotexplorations/
 | 上传者 ID | 研究主题 | 文件夹 | 环境摘要 |
 |---|---|---|---|
 | xiaobright | DeepSeek V4 在 DSH 各 preset 下的能力与触发机制 | [`xiaobright-deepseek-v4-harness`](./contributions/xiaobright-deepseek-v4-harness/) | DSH commit 47f9438 · Windows 11 + WSL 24.04 · DeepSeek 官方 API · deepseek-v4-pro/flash · minimal/standard/PTC/anchored-standard |
+| MolecularFullerene | DSH 首请求工具 schema 2×2 消融与 Request #2 协议 pilot | [`molecularfullerene-dsh-schema-ablation`](./contributions/molecularfullerene-dsh-schema-ablation/) | DSH 0.1.0-rc.5 / 47f9438 · macOS 26.5.2 arm64 · DeepSeek 官方 API · deepseek-v4-pro · exact Minimal + 自建 2×2 surface |
 | 1127353621zxm-netizen | DSH 会话导出（明文 JSONL）与内部存储（zstd 多帧）的格式差异与导入方法 | [`1127353621zxm-netizen-dsh-session-import-export`](./contributions/1127353621zxm-netizen-dsh-session-import-export/) | DSH rc.6 · Windows 11 · opencode go 订阅 · deepseek-v4-pro/flash · 自建 preset · node 22.23.2 |
 | 1127353621zxm-netizen | node 版本与 DSH zstd 会话存储的兼容性（22.14 缺 zstd API 启动崩溃） | [`1127353621zxm-netizen-node-zstd-compat`](./contributions/1127353621zxm-netizen-node-zstd-compat/) | DSH rc.6 · Windows 11 · opencode go 订阅 · deepseek-v4-pro/flash · 自建 preset |
 | 1127353621zxm-netizen | DSH 插件工具 JSON Schema 合规性修复（字段级 required / type:json） | [`1127353621zxm-netizen-deepwrite-schema-fixes`](./contributions/1127353621zxm-netizen-deepwrite-schema-fixes/) | DSH rc.6 · Windows 11 · opencode go 订阅 · deepseek-v4-flash · 自建 preset |

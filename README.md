@@ -39,6 +39,9 @@ DeepseekCotexplorations/
 | 1127353621zxm-netizen | DSH 会话导出（明文 JSONL）与内部存储（zstd 多帧）的格式差异与导入方法 | [`1127353621zxm-netizen-dsh-session-import-export`](./contributions/1127353621zxm-netizen-dsh-session-import-export/) | DSH rc.6 · Windows 11 · opencode go 订阅 · deepseek-v4-pro/flash · 自建 preset · node 22.23.2 |
 | 1127353621zxm-netizen | node 版本与 DSH zstd 会话存储的兼容性（22.14 缺 zstd API 启动崩溃） | [`1127353621zxm-netizen-node-zstd-compat`](./contributions/1127353621zxm-netizen-node-zstd-compat/) | DSH rc.6 · Windows 11 · opencode go 订阅 · deepseek-v4-pro/flash · 自建 preset |
 | 1127353621zxm-netizen | DSH 插件工具 JSON Schema 合规性修复（字段级 required / type:json） | [`1127353621zxm-netizen-deepwrite-schema-fixes`](./contributions/1127353621zxm-netizen-deepwrite-schema-fixes/) | DSH rc.6 · Windows 11 · opencode go 订阅 · deepseek-v4-flash · 自建 preset |
+| Greenhand-monster | Wire Think-Execute Standard（wire 级 think 步：工具定义在场 + 调用禁止） | [`greenhand-monster-wire-think-standard`](./contributions/greenhand-monster-wire-think-standard/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 wire-think-standard · 99/A（F9 回填） |
+| Greenhand-monster | Eternal Minimal（永驻 Minimal 目录 + dshx 网关） | [`greenhand-monster-eternal-minimal`](./contributions/greenhand-monster-eternal-minimal/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 eternal-minimal · 98/B+（F9 回填） |
+| Greenhand-monster | Combo Anchored（think 分相 + 深度门 + CoT 滴灌组合） | [`greenhand-monster-combo-anchored`](./contributions/greenhand-monster-combo-anchored/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 combo-anchored · 97/B+（F9 回填） |
 
 > 新 PR 合并时，作者需同步在根 `README.md` 索引表加一行。
 

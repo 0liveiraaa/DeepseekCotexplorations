@@ -10,3 +10,4 @@
 | 上传者 ID | 研究主题 | 文件夹 | 环境摘要 |
 |---|---|---|---|
 | xiaobright | DeepSeek V4 在 DSH 各 preset 下的能力与触发机制 | [`xiaobright-deepseek-v4-harness`](./xiaobright-deepseek-v4-harness/) | DSH commit 47f9438 · Windows 11 + WSL 24.04 · DeepSeek 官方 API · deepseek-v4-pro/flash · minimal/standard/PTC/anchored-standard |
+| test-run | ci smoke | [`test-run-ci`](./test-run-ci/) | smoke |

@@ -1,0 +1,3 @@
+name: Wire Think-Execute Standard (experimental)
+description: Every user turn opens with one think step that keeps the tool catalog visible while a sibling wire route forbids invocation (tool_choice=none), then steering opens the resident catalog on the official provider. Needs DEEPSEEK_API_KEY visible like the official route.
+order: 11

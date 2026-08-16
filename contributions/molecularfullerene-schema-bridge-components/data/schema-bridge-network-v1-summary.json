@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": 1,
+  "status": "publication-allowlisted-summary",
+  "study": "schema-bridge-live-v1",
+  "endpoint": {
+    "name": "minimal-like trajectory label",
+    "interpretation": "lexical trajectory style only; not task ability, quality, or model-internal mechanism"
+  },
+  "provenance": {
+    "oracleSha256": "02cd87c686ce4385d2413f0a0d3bba4bf4df7b3d6b4c0c0544a3e96fedd97821",
+    "rawArtifactIntegritySha256": "b04e37e04c977f5ba0a4c39dd9bf29bcac3b4f212248abdace4602c3e72755d8",
+    "rawArtifactIntegrityInterpretation": "Internal consistency and result reconciliation only; this digest is not a provider signature and does not establish external authenticity.",
+    "researchCommit": "e97670b0a875026d091b9658ced1bd4fa08d25d0",
+    "promptSetSha256": "d861a78fdd9126471e3e73a0820920dc2262a8b2741f5a142aea5fa777f0f481",
+    "classifierSha256": "0e6a7b575c3f658b537c75b5070645377b43649f26d154b51471e9cdf59a0b7a",
+    "classifierSourceCommit": "04255b55f16c4439e538239fb9783070c4165081",
+    "harnessCommit": "47f943859bef60e4160492346772ded9b24f765a",
+    "platform": "darwin-arm64",
+    "ignoredHarnessLibAndNodeModulesAttested": false,
+    "harnessRuntimeProvenanceLimitation": "Ignored generated Harness lib/ and node_modules bytes are not cryptographically attested to the reported commit."
+  },
+  "design": {
+    "pilotN": 4,
+    "mainN": 160,
+    "blocks": 40,
+    "tasks": 10,
+    "fixedRuntimeHomes": 4,
+    "providerAttemptBound": 164,
+    "permutationDraws": 100000,
+    "bootstrapDraws": 20000,
+    "familywiseAlpha": 0.05
+  },
+  "protocolIntegrity": {
+    "accepted": 164,
+    "logicalModelHeaders": 164,
+    "assistants": 164,
+    "retries": 0,
+    "executorDispatches": 0,
+    "failedUnitsReplaced": 0
+  },
+  "primary": {
+    "armMinimalLikeRates": {
+      "pp": 0.65,
+      "po": 0.525,
+      "op": 0.35,
+      "oo": 0.225
+    },
+    "contrasts": {
+      "D": {
+        "estimate": -0.30000000000000004,
+        "definition": "0.5*((OP+OO)-(PP+PO)); description one-shot minus persistent",
+        "permutationTwoSidedP": 0.00010999890001099989,
+        "holmAdjustedP": 0.00032999670003299966,
+        "rejectAtFamilywise05": true,
+        "descriptiveTaskClusterBootstrap95": {
+          "low": -0.4128124999999998,
+          "high": -0.17500000000000004
+        }
+      },
+      "Q": {
+        "estimate": -0.125,
+        "definition": "0.5*((PO+OO)-(PP+OP)); parameter-schema one-shot minus persistent",
+        "permutationTwoSidedP": 0.15986840131598684,
+        "holmAdjustedP": 0.3197368026319737,
+        "rejectAtFamilywise05": false,
+        "descriptiveTaskClusterBootstrap95": {
+          "low": -0.22499999999999998,
+          "high": -0.025000000000000022
+        }
+      },
+      "I": {
+        "estimate": 0,
+        "definition": "OO-OP-PO+PP; factorial interaction",
+        "permutationTwoSidedP": 1,
+        "holmAdjustedP": 1,
+        "rejectAtFamilywise05": false,
+        "descriptiveTaskClusterBootstrap95": {
+          "low": -0.17500000000000004,
+          "high": 0.19999999999999996
+        }
+      }
+    },
+    "deidentifiedPrimaryLabelMatrix": [
+      {
+        "taskClusterOrdinal": 1,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 1,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 2,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 3,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 4,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "ambiguous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 2,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 5,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 6,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 7,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 8,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "minimal-like"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 3,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 9,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "standard-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 10,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "standard-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 11,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 12,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "standard-like"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "standard-like"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "standard-like"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 4,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 13,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 14,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "standard-like"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 15,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 16,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "ambiguous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 5,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 17,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 18,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 19,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "standard-like"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 20,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "ambiguous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 6,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 21,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 22,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 23,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 24,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "ambiguous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 7,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 25,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 26,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 27,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 28,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "minimal-like"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 8,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 29,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 30,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 31,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 32,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "minimal-like"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 9,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 33,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 34,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 35,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 36,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "ambiguous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "taskClusterOrdinal": 10,
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "blockOrdinal": 37,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 4,
+                "arm": "po",
+                "label": "minimal-like"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 2,
+            "blockOrdinal": 38,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "pp",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "oo",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 3,
+            "blockOrdinal": 39,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "po",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 3,
+                "arm": "op",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "pp",
+                "label": "ambiguous"
+              }
+            ]
+          },
+          {
+            "rowOrdinal": 4,
+            "blockOrdinal": 40,
+            "outcomesByPosition": [
+              {
+                "position": 1,
+                "arm": "pp",
+                "label": "ambiguous"
+              },
+              {
+                "position": 2,
+                "arm": "po",
+                "label": "minimal-like"
+              },
+              {
+                "position": 3,
+                "arm": "oo",
+                "label": "ambiguous"
+              },
+              {
+                "position": 4,
+                "arm": "op",
+                "label": "minimal-like"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "multiplicity": "Holm familywise error control across D, Q, and I at alpha 0.05",
+    "uncertainty": "95% task/prompt-cluster bootstrap intervals are descriptive"
+  },
+  "secondary": {
+    "opMinusPo": {
+      "estimate": -0.17500000000000004,
+      "permutationTwoSidedP": 0.15081849181508186,
+      "descriptiveTaskClusterBootstrap95": {
+        "low": -0.375,
+        "high": 0.024999999999999967
+      },
+      "multiplicityRole": "secondary; outside the D/Q/I Holm family"
+    },
+    "byArm": {
+      "pp": {
+        "n": 40,
+        "labels": {
+          "minimal-like": 26,
+          "standard-like": 2,
+          "ambiguous": 12
+        },
+        "minimalLikeRate": 0.65,
+        "startsWeNeed": 26,
+        "startsLetMe": 2,
+        "tools": {
+          "total": 43,
+          "trajectoriesWithAny": 40,
+          "namesValidAmongTrajectoriesWithAny": 40,
+          "argumentsValidAmongTrajectoriesWithAny": 40
+        },
+        "tokens": {
+          "prompt": {
+            "reported": 40,
+            "total": 47460,
+            "mean": 1186.5
+          },
+          "reasoning": {
+            "reported": 40,
+            "total": 1922,
+            "mean": 48.05
+          },
+          "output": {
+            "reported": 40,
+            "total": 4559,
+            "mean": 113.975
+          }
+        }
+      },
+      "po": {
+        "n": 40,
+        "labels": {
+          "minimal-like": 21,
+          "standard-like": 1,
+          "ambiguous": 18
+        },
+        "minimalLikeRate": 0.525,
+        "startsWeNeed": 21,
+        "startsLetMe": 1,
+        "tools": {
+          "total": 44,
+          "trajectoriesWithAny": 40,
+          "namesValidAmongTrajectoriesWithAny": 40,
+          "argumentsValidAmongTrajectoriesWithAny": 40
+        },
+        "tokens": {
+          "prompt": {
+            "reported": 40,
+            "total": 58860,
+            "mean": 1471.5
+          },
+          "reasoning": {
+            "reported": 40,
+            "total": 1955,
+            "mean": 48.875
+          },
+          "output": {
+            "reported": 40,
+            "total": 5450,
+            "mean": 136.25
+          }
+        }
+      },
+      "op": {
+        "n": 40,
+        "labels": {
+          "minimal-like": 14,
+          "standard-like": 3,
+          "ambiguous": 23
+        },
+        "minimalLikeRate": 0.35,
+        "startsWeNeed": 14,
+        "startsLetMe": 3,
+        "tools": {
+          "total": 46,
+          "trajectoriesWithAny": 40,
+          "namesValidAmongTrajectoriesWithAny": 40,
+          "argumentsValidAmongTrajectoriesWithAny": 40
+        },
+        "tokens": {
+          "prompt": {
+            "reported": 40,
+            "total": 57340,
+            "mean": 1433.5
+          },
+          "reasoning": {
+            "reported": 40,
+            "total": 1975,
+            "mean": 49.375
+          },
+          "output": {
+            "reported": 40,
+            "total": 4757,
+            "mean": 118.925
+          }
+        }
+      },
+      "oo": {
+        "n": 40,
+        "labels": {
+          "minimal-like": 9,
+          "standard-like": 1,
+          "ambiguous": 30
+        },
+        "minimalLikeRate": 0.225,
+        "startsWeNeed": 9,
+        "startsLetMe": 1,
+        "tools": {
+          "total": 46,
+          "trajectoriesWithAny": 40,
+          "namesValidAmongTrajectoriesWithAny": 40,
+          "argumentsValidAmongTrajectoriesWithAny": 40
+        },
+        "tokens": {
+          "prompt": {
+            "reported": 40,
+            "total": 68740,
+            "mean": 1718.5
+          },
+          "reasoning": {
+            "reported": 40,
+            "total": 2165,
+            "mean": 54.125
+          },
+          "output": {
+            "reported": 40,
+            "total": 5851,
+            "mean": 146.275
+          }
+        }
+      }
+    },
+    "overall": {
+      "n": 160,
+      "labels": {
+        "minimal-like": 70,
+        "standard-like": 7,
+        "ambiguous": 83
+      },
+      "minimalLikeRate": 0.4375,
+      "startsWeNeed": 70,
+      "startsLetMe": 7,
+      "tools": {
+        "total": 179,
+        "trajectoriesWithAny": 160,
+        "namesValidAmongTrajectoriesWithAny": 160,
+        "argumentsValidAmongTrajectoriesWithAny": 160
+      },
+      "tokens": {
+        "prompt": {
+          "reported": 160,
+          "total": 232400,
+          "mean": 1452.5
+        },
+        "reasoning": {
+          "reported": 160,
+          "total": 8017,
+          "mean": 50.10625
+        },
+        "output": {
+          "reported": 160,
+          "total": 20617,
+          "mean": 128.85625
+        }
+      }
+    }
+  },
+  "publicationPolicy": "Allowlisted statistics plus a deidentified primary-label matrix only. Its design ordinals are reproducible from the public analysis seed; they are not anonymization. Raw trajectories, text, real runtime identifiers/hashes, paths, and per-unit times are excluded. The raw artifact digest is not a provider signature or proof of external authenticity. The reported Harness commit does not attest ignored generated lib/ or node_modules bytes."
+}

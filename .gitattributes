@@ -1,0 +1,12 @@
+# 统一行尾为 LF，避免 Windows autocrlf 在切换分支时损坏文件
+* text=auto
+
+*.md text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+
+LICENSE text eol=lf
+.gitignore text eol=lf

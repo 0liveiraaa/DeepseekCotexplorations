@@ -1,8 +1,7 @@
-# modeltest-explorations — LLM 探索结果收录仓库
+# LLM 探索结果收录仓库
 
 > 把对 LLM（重点：DeepSeek V4 系列）在工程维护任务上的探索结果，按人、按主题收录。
 > 每个贡献者通过 PR 上传自己的文件夹，文件夹自带 README 记录研究结果与实验环境。
-> `modeltest/`（V4.1b，已冻结）是本仓库的参考样板，**不要改动它**。
 
 ## 收录规则（摘要，详见 [CONTRIBUTING.md](./CONTRIBUTING.md)）
 
@@ -14,15 +13,14 @@
   - 实验环境：**dsh 版本 / 操作系统 / API 来源 / 模型**（详见模板）
 - API 来源二选一：**DeepSeek 官方 API** 或 **opencode go 订阅**。二者渠道不同、成本不同，不标注无法横向比较。
 - 其余文件任意放置，但尽量整齐（建议：脚本、日志、报告分目录）。
-- 不收录：含密钥/token 的文件、超过 GitHub 单文件限制的大文件、modeltest 的隐藏测试内容。
+- 不收录：含密钥/token 的文件、超过 GitHub 单文件限制的大文件、评测的隐藏测试内容。
 
 ## 目录布局
 
 ```text
-modeltest-explorations/
+DeepseekCotexplorations/
 ├── README.md            # 本文件：总览 + 贡献者索引
 ├── CONTRIBUTING.md      # PR 流程、命名规范、README 模板
-├── modeltest/           # 参考样板（V4.1b 冻结快照，勿动）
 └── contributions/       # 探索结果收录区
     ├── README.md        #   收录区说明
     └── _TEMPLATE.md     #   贡献者 README 模板（复制后填写）
@@ -39,10 +37,10 @@ modeltest-explorations/
 ## 为什么强制记录环境变量
 
 同一道题，dsh 版本、操作系统、API 来源（官方 API 还是 go 订阅）、harness preset 不同，
-得分可能差 5–10 分（modeltest V4.1b 已有先例）。不记录环境，结果就是孤立的数字，
+得分可能差 5–10 分（V4.1b 基线已有先例）。不记录环境，结果就是孤立的数字，
 无法复现、无法比较。这是本仓库对每份贡献的最低要求。
 
 ## 参考
 
-- modeltest 自测套件：[`modeltest/`](./modeltest/)（冻结基线 V4.1b，2026-07-23）
-- 成绩榜与报告：[`modeltest/evaluator/reports/`](./modeltest/evaluator/reports/)
+- 完整测试套件与工具（Project2 V4.1b 题面、evaluator、harness preset）：
+  [`xiaobright/modeltest`](https://github.com/xiaobright/modeltest)

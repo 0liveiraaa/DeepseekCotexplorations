@@ -36,10 +36,8 @@
 
 ## 禁止事项
 
-- **不要改动 `modeltest/` 目录**（冻结参考样板）。
 - 不要删改他人文件夹。
-- 不提交：密钥/token、`.env`、凭据；超过 GitHub 限制的大文件（模型权重、编译产物等）；
-  modeltest 的隐藏测试（`evaluator/tests/hidden/`、`evaluator/scoring/`）及其答案。
+- 不提交：密钥/token、`.env`、凭据；超过 GitHub 限制的大文件（模型权重、编译产物等）。
 - 大文件如有必要，放 Releases 或外链，并在 README 注明。
 
 ## 评审标准

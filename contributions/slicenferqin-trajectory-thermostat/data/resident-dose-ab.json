@@ -1,0 +1,147 @@
+{
+  "source": "local headless A/B, opencode-go subscription, deepseek-v4-pro, reasoningEffort=max, 2026-08-16",
+  "rows": [
+    {
+      "scenario": "skill",
+      "preset": "zero-warmup",
+      "tools": [
+        "bash",
+        "dev_tool_search",
+        "skill_load",
+        "skill_search",
+        "str_replace_editor"
+      ],
+      "anchor": {
+        "n": 6,
+        "weNeedFirstLine": 5,
+        "zeroLetMe": 5,
+        "meanLetMe": 0.167
+      },
+      "real": {
+        "n": 6,
+        "weNeedFirstLine": 4,
+        "zeroLetMe": 6,
+        "meanLetMe": 0
+      }
+    },
+    {
+      "scenario": "skill",
+      "preset": "zero-warmup-neutral",
+      "tools": [
+        "bash",
+        "dev_tool_search",
+        "skill_load",
+        "skill_search",
+        "str_replace_editor"
+      ],
+      "anchor": {
+        "n": 6,
+        "weNeedFirstLine": 6,
+        "zeroLetMe": 4,
+        "meanLetMe": 0.333
+      },
+      "real": {
+        "n": 6,
+        "weNeedFirstLine": 3,
+        "zeroLetMe": 5,
+        "meanLetMe": 0.167
+      }
+    },
+    {
+      "scenario": "skill",
+      "preset": "zero-warmup-plusfs",
+      "tools": [
+        "bash",
+        "dev_tool_search",
+        "grep",
+        "read",
+        "skill_load",
+        "skill_search",
+        "str_replace_editor"
+      ],
+      "anchor": {
+        "n": 6,
+        "weNeedFirstLine": 6,
+        "zeroLetMe": 4,
+        "meanLetMe": 0.333
+      },
+      "real": {
+        "n": 6,
+        "weNeedFirstLine": 5,
+        "zeroLetMe": 6,
+        "meanLetMe": 0
+      }
+    },
+    {
+      "scenario": "zh",
+      "preset": "zero-warmup",
+      "tools": [
+        "bash",
+        "dev_tool_search",
+        "skill_load",
+        "skill_search",
+        "str_replace_editor"
+      ],
+      "anchor": {
+        "n": 6,
+        "weNeedFirstLine": 6,
+        "zeroLetMe": 5,
+        "meanLetMe": 0.167
+      },
+      "real": {
+        "n": 6,
+        "weNeedFirstLine": 2,
+        "zeroLetMe": 5,
+        "meanLetMe": 0.167
+      }
+    },
+    {
+      "scenario": "zh",
+      "preset": "zero-warmup-neutral",
+      "tools": [
+        "bash",
+        "dev_tool_search",
+        "skill_load",
+        "skill_search",
+        "str_replace_editor"
+      ],
+      "anchor": {
+        "n": 6,
+        "weNeedFirstLine": 6,
+        "zeroLetMe": 5,
+        "meanLetMe": 0.167
+      },
+      "real": {
+        "n": 6,
+        "weNeedFirstLine": 2,
+        "zeroLetMe": 6,
+        "meanLetMe": 0
+      }
+    },
+    {
+      "scenario": "zh",
+      "preset": "zero-warmup-plusfs",
+      "tools": [
+        "bash",
+        "dev_tool_search",
+        "grep",
+        "read",
+        "skill_load",
+        "skill_search",
+        "str_replace_editor"
+      ],
+      "anchor": {
+        "n": 6,
+        "weNeedFirstLine": 6,
+        "zeroLetMe": 5,
+        "meanLetMe": 0.167
+      },
+      "real": {
+        "n": 6,
+        "weNeedFirstLine": 3,
+        "zeroLetMe": 6,
+        "meanLetMe": 0
+      }
+    }
+  ]
+}

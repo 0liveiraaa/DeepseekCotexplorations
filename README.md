@@ -45,6 +45,7 @@ DeepseekCotexplorations/
 | xiaobright | V4 工具面剂量 + Prefab Anchored Project2 三轮复现与通用化边界 | [`xiaobright-v4-tool-surface-dose-response`](./contributions/xiaobright-v4-tool-surface-dose-response/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro/flash · 72 probes + Project2 98/99/99 |
 | noone89 | V4-Pro-0813 思维链"人格分裂"的机制归因 | [`noone89-deepseek-v4`](./contributions/noone89-deepseek-v4/) | DSH 0.1.0-rc.6 · Windows 11 原生 · OpenCode Go 订阅 · deepseek-v4-pro |
 | wushi2333 | 大脑-手脚双模式：零注入大脑 + harness 手脚的思维链稳定性与闭环编排 | [`wushi2333-dsh-head-hand-mode`](./contributions/wushi2333-dsh-head-hand-mode/) | DSH master（自建） · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 brain-hands preset · Project2 87/B+ |
+| MolecularFullerene | 固定 executor 的 DSH schema bridge：description × parameters 预注册消融 | [`molecularfullerene-schema-bridge-components`](./contributions/molecularfullerene-schema-bridge-components/) | DSH 0.1.0-rc.5 / 47f9438 · macOS 26.5.2 arm64 · DeepSeek 官方 API · deepseek-v4-pro · 4 pilot + 160 main |
 
 > 新 PR 合并时，作者需同步在根 `README.md` 索引表加一行。
 

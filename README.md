@@ -44,6 +44,7 @@ DeepseekCotexplorations/
 | Greenhand-monster | Combo Anchored（think 分相 + 深度门 + CoT 滴灌组合） | [`greenhand-monster-combo-anchored`](./contributions/greenhand-monster-combo-anchored/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 combo-anchored · 97/B+（F9 回填） |
 | xiaobright | V4 工具面剂量 + Prefab Anchored Project2 三轮复现与通用化边界 | [`xiaobright-v4-tool-surface-dose-response`](./contributions/xiaobright-v4-tool-surface-dose-response/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro/flash · 72 probes + Project2 98/99/99 |
 | noone89 | V4-Pro-0813 思维链"人格分裂"的机制归因 | [`noone89-deepseek-v4`](./contributions/noone89-deepseek-v4/) | DSH 0.1.0-rc.6 · Windows 11 原生 · OpenCode Go 订阅 · deepseek-v4-pro |
+| xiaobright | Prefab 模板回传锚定质量块量化与单请求首句探针（涨价约束下的低成本方法论） | [`xiaobright-v4-anchor-mass-probe`](./contributions/xiaobright-v4-anchor-mass-probe/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 9 探针请求 9/9 零 let-me |
 
 > 新 PR 合并时，作者需同步在根 `README.md` 索引表加一行。
 

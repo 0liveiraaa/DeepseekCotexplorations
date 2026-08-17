@@ -44,6 +44,7 @@ DeepseekCotexplorations/
 | Greenhand-monster | Combo Anchored（think 分相 + 深度门 + CoT 滴灌组合） | [`greenhand-monster-combo-anchored`](./contributions/greenhand-monster-combo-anchored/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 combo-anchored · 97/B+（F9 回填） |
 | xiaobright | V4 工具面剂量 + Prefab Anchored Project2 三轮复现与通用化边界 | [`xiaobright-v4-tool-surface-dose-response`](./contributions/xiaobright-v4-tool-surface-dose-response/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro/flash · 72 probes + Project2 98/99/99 |
 | noone89 | V4-Pro-0813 思维链"人格分裂"的机制归因 | [`noone89-deepseek-v4`](./contributions/noone89-deepseek-v4/) | DSH 0.1.0-rc.6 · Windows 11 原生 · OpenCode Go 订阅 · deepseek-v4-pro |
+| slicenferqin | Trajectory Thermostat：按思维链指纹反馈调节工具/注入剂量 | [`slicenferqin-trajectory-thermostat`](./contributions/slicenferqin-trajectory-thermostat/) | DSH 0.1.0-rc.6 · macOS 27 arm64 · opencode go 订阅 · deepseek-v4-pro · 自建 zero-warmup 变体 |
 
 > 新 PR 合并时，作者需同步在根 `README.md` 索引表加一行。
 

@@ -42,6 +42,9 @@
 
 ## 材料清单
 
+- 对应代码仓库（preset/插件本体、prefab 管线、探针工具）：
+  [xiaobright/dsh-anchored-standard](https://github.com/xiaobright/dsh-anchored-standard)；
+  后续贡献见 [`xiaobright-v4-anchor-mass-probe`](../xiaobright-v4-anchor-mass-probe/)。
 - `reports/TOOL_SURFACE_DOSE_RESPONSE.md`：完整实验设计、分格结果、合法性复核和限制。
 - `reports/PREFAB_PROJECT2_REPLICATION.md`：三轮 Project2 复现、prefab 修复、有效
   reasoning 回传机制及通用版未复测限制。

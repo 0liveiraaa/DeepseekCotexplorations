@@ -1,0 +1,86 @@
+{
+  "contribution": "xiaobright-v4-anchor-mass-probe",
+  "date": "2026-08-17",
+  "environment": {
+    "dsh": "0.1.0-rc.5 @ 47f943859bef60e4160492346772ded9b24f765a",
+    "os": "Windows 11 native",
+    "apiSource": "DeepSeek official API",
+    "model": "deepseek-v4-pro (mutable server-side alias, likely 0813 checkpoint on observation date)",
+    "preset": "prefab-anchored-standard",
+    "node": "24.x",
+    "thinking": "enabled"
+  },
+  "mechanism": {
+    "replayRule": "assistant messages WITH tool calls have their reasoning_content replayed to subsequent requests; plain-text assistant messages drop reasoning",
+    "anchorMassDefinition": "sum of replayed reasoning chars across the template's tool-call-bearing assistant messages",
+    "cleaningSideEffect": "template cleaning (removing failed call/result pairs) also removes replay eligibility; project2 template 5178 chars/7 steps raw -> 3533/7 after cleaning"
+  },
+  "templateBaselines": [
+    {
+      "template": "shipped-generic",
+      "effectiveToolReasoningTurns": 3,
+      "replayedReasoningChars": 1096,
+      "replayRatio": 0.859,
+      "replayedSlice": { "we": 3, "letMe": 0, "i": 0 },
+      "promoted": true
+    },
+    {
+      "template": "project2-benchmark",
+      "effectiveToolReasoningTurns": 7,
+      "replayedReasoningChars": 3533,
+      "replayRatio": 0.736,
+      "replayedSlice": { "we": 20, "letMe": 0, "i": 0 },
+      "promoted": false
+    },
+    {
+      "template": "generic-candidate-v3",
+      "effectiveToolReasoningTurns": 5,
+      "replayedReasoningChars": 1158,
+      "replayRatio": 0.903,
+      "replayedSlice": { "we": 2, "letMe": 0, "i": 0 },
+      "promoted": false,
+      "note": "structurally superior (steps/replay ratio) but wins on no measured style axis; kept as local candidate"
+    }
+  ],
+  "probeResults": {
+    "methodology": "one model request per trial; first durable assistant/message triggers cancel; first-line family classification (we/lets/let-me/user/i/other) plus body we/letMe counts and first-message tool-call count",
+    "trials": [
+      {
+        "variant": "shipped",
+        "followUpShape": "summary-style question",
+        "n": 4,
+        "seeded": 4,
+        "letMeAnywhere": 0,
+        "firstLineFamilies": { "user": 4 },
+        "bodyWeCounts": [5, 5, 5, 6]
+      },
+      {
+        "variant": "candidate-v3",
+        "followUpShape": "summary-style question",
+        "n": 4,
+        "seeded": 4,
+        "letMeAnywhere": 0,
+        "firstLineFamilies": { "user": 3, "other": 1 },
+        "bodyWeCounts": [0, 1, 3, 3]
+      },
+      {
+        "variant": "shipped",
+        "followUpShape": "work-task prompt",
+        "n": 1,
+        "seeded": 1,
+        "letMeAnywhere": 0,
+        "firstLineFamilies": { "user": 1 },
+        "bodyWeCounts": [12],
+        "firstMessageToolCalls": 2
+      }
+    ],
+    "conclusions": [
+      "9/9 zero let-me across both templates: replayed anchor mass fully suppresses let-me degeneration",
+      "first-line family is governed by follow-up prompt shape, not by the template",
+      "replayed-slice we density (not step count) covaries with clone body we usage (exploratory, n=4)"
+    ],
+    "evidenceClass": "exploratory (n=1..4 per cell, no pre-registration)"
+  },
+  "budgetNote": "post-price-hike methodology: Project2-class full evaluation (~12 CNY/round) suspended; entire round cost = 4 roll attempts + 9 single-request probes",
+  "excluded": "no full reasoning text, no session IDs, no request IDs, no workspace paths"
+}

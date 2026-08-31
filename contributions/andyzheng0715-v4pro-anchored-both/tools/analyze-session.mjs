@@ -11,7 +11,7 @@
 import { createReadStream } from 'node:fs'
 import readline from 'node:readline'
 
-import { classifyReasoning, countWord } from './tool-bootstrap.mjs'
+import { classifyReasoning, countWord } from '../preset/auto-b7n/tool-bootstrap.mjs'
 
 const WORD = {
   we: /\bwe\b/gi,

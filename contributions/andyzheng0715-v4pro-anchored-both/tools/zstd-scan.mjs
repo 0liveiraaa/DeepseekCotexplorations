@@ -2,6 +2,10 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { zstdDecompressSync } from 'node:zlib'
 const [inFile, outFile] = process.argv.slice(2)
+if (inFile === undefined || outFile === undefined) {
+  console.error('usage: node tools/zstd-scan.mjs <inFile.zstd> <outFile>')
+  process.exit(1)
+}
 const buf = readFileSync(inFile)
 const MAGIC = [0x28, 0xB5, 0x2F, 0xFD]
 const starts = []
@@ -13,5 +17,6 @@ for (let j = 0; j < starts.length; j++) {
   const s = starts[j], e = j + 1 < starts.length ? starts[j+1] : buf.length
   try { parts.push(zstdDecompressSync(buf.subarray(s, e))) } catch (err) { /* 压缩数据内偶发假魔数,跳过 */ }
 }
-writeFileSync(outFile, Buffer.concat(parts))
-console.log(`frames=${starts.length} decoded=${parts.length} bytes=${Buffer.concat(parts).length}`)
+const combined = Buffer.concat(parts)
+writeFileSync(outFile, combined)
+console.log(`frames=${starts.length} decoded=${parts.length} bytes=${combined.length}`)

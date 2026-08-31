@@ -29,7 +29,9 @@
  * silently executes under pwsh/cmd, which are different command languages.
  *
  * Semantics mirror the official bash tool: `bash -c <command>` in a fresh
- * process, bounded output, non-zero exit reported not thrown. No sandbox
+ * process, bounded output, a non-zero exit thrown so the runtime surfaces it
+ * as a tool failure (the message carries the command output and exit code).
+ * No sandbox
  * confinement on Windows (the sandbox backend is linux-only); the description
  * says so.
  *
@@ -203,8 +205,8 @@ export function apply(ctx, config) {
       const text = [stdout, stderr].filter((part) => part.length > 0).join('\n')
       const tail = text.length > 0 ? text : `exit code: ${outcome.exitCode} (no output)`
       if (outcome.exitCode !== 0) {
-        // Non-zero exit is a reported failure, not a throw: the model sees the
-        // command output plus the exit code.
+        // A non-zero exit is thrown so the runtime reports it as a tool
+        // failure; the message carries the command output and the exit code.
         throw new Error(tail)
       }
       return { text: tail }

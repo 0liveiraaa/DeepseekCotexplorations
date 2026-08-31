@@ -83,7 +83,12 @@ const WORKSPACE_LINE_PREFIX = '\n\nYour working directory is '
 const DEFAULT_MESSAGE_SOURCES = ['user', 'goal']
 
 function stringList(value, field, fallback) {
-  if (value === undefined) return [...fallback]
+  if (value === undefined) {
+    if (fallback === undefined) {
+      throw new TypeError(`${name}: ${field} is required (a non-empty array of non-empty strings)`)
+    }
+    return [...fallback]
+  }
   if (!Array.isArray(value) || value.length === 0 || value.some(item => typeof item !== 'string' || item.length === 0)) {
     throw new TypeError(`${name}: ${field} must be a non-empty array of non-empty strings`)
   }
@@ -461,7 +466,7 @@ function withPtcInstruction(assembly, policy) {
   const persona = assembly.sections.find(section =>
     PERSONA_SECTION_NAMES.has(section?.name)
     && typeof section?.text === 'string'
-    && !section.text.includes(mode === 'both' ? 'remain directly callable' : 'PTC) mode'))
+    && !section.text.includes(mode === 'both' ? BOTH_INSTRUCTION : 'PTC) mode'))
   if (persona === undefined) return assembly
   return {
     ...assembly,

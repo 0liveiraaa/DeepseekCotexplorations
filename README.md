@@ -61,3 +61,4 @@ DeepseekCotexplorations/
 
 - 完整测试套件与工具（Project2 V4.1b 题面、evaluator、harness preset）：
   [`xiaobright/modeltest`](https://github.com/xiaobright/modeltest)
+| AndyZHENG0715 | anchored 预设落地演进与 both-mode 使用纪律 | [`andyzheng0715-anchored-evolution`](./contributions/andyzheng0715-anchored-evolution/) | DSH 0.1.1-rc.2 · Ubuntu 26.04 (WSL) · opencode go 订阅 · deepseek-v4-pro · 自建 anchored / anchored-creator |

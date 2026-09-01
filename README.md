@@ -47,6 +47,7 @@ DeepseekCotexplorations/
 | wushi2333 | 大脑-手脚双模式：零注入大脑 + harness 手脚的思维链稳定性与闭环编排 | [`wushi2333-dsh-head-hand-mode`](./contributions/wushi2333-dsh-head-hand-mode/) | DSH master（自建） · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 自建 brain-hands preset · Project2 87/B+ |
 | MolecularFullerene | 固定 executor 的 DSH schema bridge：description × parameters 预注册消融 | [`molecularfullerene-schema-bridge-components`](./contributions/molecularfullerene-schema-bridge-components/) | DSH 0.1.0-rc.5 / 47f9438 · macOS 26.5.2 arm64 · DeepSeek 官方 API · deepseek-v4-pro · 4 pilot + 160 main |
 | xiaobright | Prefab 模板回传锚定质量块量化与单请求首句探针（涨价约束下的低成本方法论） | [`xiaobright-v4-anchor-mass-probe`](./contributions/xiaobright-v4-anchor-mass-probe/) | DSH 0.1.0-rc.5 / 47f9438 · Windows 11 原生 · DeepSeek 官方 API · deepseek-v4-pro · 9 探针请求 9/9 零 let-me |
+| AndyZHENG0715 | DSH 锚定轨迹剂量-响应与 both-mode 预设 Auto-B7n | [`andyzheng0715-v4pro-anchored-both`](./contributions/andyzheng0715-v4pro-anchored-both/) | DSH 0.1.1-rc.2 · Ubuntu 26.04 (WSL) · opencode go 订阅 · deepseek-v4-pro · 自建 both-mode 双相预设 · 40+ 会话 |
 
 > 新 PR 合并时，作者需同步在根 `README.md` 索引表加一行。
 

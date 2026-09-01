@@ -1,0 +1,33 @@
+run,variant,task,dir,completed,first_label,we,let_me,we_ratio,header_changes,run_code_errors
+0,auto-b,fix,fix-01,yes,minimal-like,3,2,0.60,1,0
+1,auto-a,fix,fix-03*,yes,minimal-like,2,0,1.00,1,0
+2,auto-b2,fix,fix-03(pre-fixed),yes,minimal-like,25,71,0.26,1,0
+3,auto-a,build,build-01,yes,minimal-like (score 4),5,0,1.00,1,0
+4,auto-b2,build,build-02,yes,minimal-like (score 4),8,0,1.00,1,0
+5,auto-a,fix,fix-04,yes,minimal-like (score 4),2,0,1.00,1,0
+6,auto-b2,fix,fix-05,yes,minimal-like (score 4),2,0,1.00,1,0
+7,auto-a,build,build-03,yes,minimal-like (score 4),7,1,0.88,1,0
+8,auto-b2,build,build-04,yes,minimal-like (score 4),9,1,0.90,1,0
+9,auto-a,fix,fix-06,yes,minimal-like (score 4),2,0,1.00,1,0
+10,auto-b2,build,build-05,yes,minimal-like (score 4),4,2,0.67,1,0
+11,auto-a,build,build-06,yes,minimal-like (score 4),3,0,1.00,1,0
+12,auto-b2,fix,fix-02,yes,minimal-like (score 4),6,0,1.00,1,0
+13,auto-a,long,long-01,yes,minimal-like (score 4),3,2,0.60,1,0
+14,auto-b2,long,long-02,yes,minimal-like (score 4),4,2,0.67,1,0
+15,auto-a,parse,parse-01,yes,minimal-like (score 4),43,23,0.65,1,0
+16,auto-b2,parse,parse-02,yes,minimal-like (score 4),20,10,0.67,1,0
+17,standard,long,tri-01,yes,standard-like (score -4),1,9,0.10,0,0
+18,code,long,tri-02,yes,standard-like (score -4),2,22,0.08,0,0
+19,auto-a,long,tri-03,yes,minimal-like (score 4),5,5,0.50,1,0
+20,auto-a,git,git-01,yes,minimal-like (score 4),75,30,0.71,1,0
+21,auto-b2,git,git-02,yes,minimal-like (score 4),34,17,0.67,1,0
+22,auto-b,git,git-03,yes,minimal-like (score 4),119,58,0.67,1,0
+23,auto-b3,git,git-04,yes,minimal-like (score 4),64,93,0.41,1,0
+24,auto-b3v2,git,git-06,yes,minimal-like (score 4),138,26,0.84,1,0
+25,auto-b3v3,git,git-07,contaminated,minimal-like (score 4),78,2,0.97,1,0
+26,auto-b3v4,git,git-08,no,minimal-like (score 4),3,0,1.00,0,0
+27,auto-b3v5,git,git-08,yes,minimal-like (score 4),25,123,0.17,1,0
+28,auto-b3v6,git,git-10,yes,minimal-like (score 4),250,6,0.98,1,0
+34,auto-b7,git,git-11,yes,minimal-like (score 4),78,39,0.67,1,0
+38,auto-b7n,git,git-12,yes,minimal-like (score 4),69,9,0.88,1,0
+39,auto-b7n,git,git-13,yes,minimal-like (score 4),192,38,0.83,1,0
